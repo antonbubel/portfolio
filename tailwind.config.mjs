@@ -15,7 +15,7 @@ export default {
     extend: {
       animation: {
         typing: "typing 1.5s steps(20), blink 1s infinite",
-				fade: 'fadeOut 1s ease-in-out',
+        fade: "fadeOut 1s ease-in-out",
       },
       keyframes: {
         typing: {
@@ -34,9 +34,9 @@ export default {
             "border-right-color": "var(--nc)",
           },
         },
-				fadeOut: {
-          '0%': { opacity: 0 },
-          '100%': { opacity: 1 },
+        fadeOut: {
+          "0%": { opacity: 0 },
+          "100%": { opacity: 1 },
         },
       },
     },
