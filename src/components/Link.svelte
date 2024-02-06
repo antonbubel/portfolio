@@ -1,14 +1,15 @@
-<script>
+<script lang="ts">
   import { onMount } from 'svelte';
   import { track } from '@vercel/analytics';
 
-  export let href = '#';
-  export let target = '_self';
-  export let rel = '';
-  export let className = '';
-  export let ariaLabel = '';
+  export let href: string | undefined = '#';
+  
+  export let target: string | undefined = '_self';
+  export let rel: string | undefined = '';
+  export let className: string | undefined = '';
+  export let ariaLabel: string | undefined = '';
 
-  let link;
+  let link: HTMLAnchorElement;
 
   onMount(() => {
     link.addEventListener('click', () => {
@@ -20,6 +21,6 @@
   });
 </script>
 
-<a bind:this={link} {href} {target} {rel} {ariaLabel} class={className}>
+<a bind:this={link} {href} {target} {rel} aria-label={ariaLabel} class={className}>
   <slot></slot>
 </a>
