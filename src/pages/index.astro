@@ -1,6 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import { Download, Github, Linkedin } from "lucide-svelte";
+import Link from "../components/Link.svelte";
+import { FileText, Github, Linkedin } from "lucide-svelte";
 ---
 
 <Layout title="Anton Bubel - Senior Full Stack Developer">
@@ -21,34 +22,40 @@ import { Download, Github, Linkedin } from "lucide-svelte";
           <span class="text-primary">Anton</span><span class="pl-2">👋</span>
         </h1>
         <p class="mt-0 font-mono text-lg animate-fade">
-          a passionate full stack developer with over 6+ years of experience
+          a passionate full stack developer with over 5+ years of experience
           building web applications.
         </p>
       </div>
     </div>
     <div class="flex justify-center gap-3">
-      <a
-        href="/CV-Senior-Full-Stack-Developer-Team-Lead-Anton-Bubel.pdf"
-        aria-label="Download my CV"
-        download
-        class="btn btn-outline btn-primary btn-sm"
+      <Link
+        href="/anton-bubel-resume.pdf"
+        target="_blank"
+        className="btn btn-outline btn-primary btn-sm"
+        ariaLabel="Open CV in a new tab"
+        client:idle
       >
-        <Download /> Download my CV
-      </a>
-      <a
+        <FileText />
+        CV
+      </Link>
+      <Link
         href="https://github.com/antonbubel/"
         target="_blank"
-        rel="noopener noreferrer"
-        aria-label="GitHub profile"
-        class="btn btn-sm btn-secondary btn-outline"><Github /></a
+        ariaLabel="GitHub profile"
+        className="btn btn-sm btn-secondary btn-outline"
+        client:idle
       >
-      <a
+        <Github />
+      </Link>
+      <Link
         href="https://www.linkedin.com/in/antonbubel/"
         target="_blank"
-        rel="noopener noreferrer"
-        aria-label="LinkedIn profile"
-        class="btn btn-sm btn-accent btn-outline"><Linkedin /></a
+        ariaLabel="LinkedIn profile"
+        className="btn btn-sm btn-accent btn-outline"
+        client:idle
       >
+        <Linkedin />
+      </Link>
     </div>
   </main>
 </Layout>
