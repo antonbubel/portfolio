@@ -5,23 +5,42 @@ interface Props {
   title: string;
   description?: string | undefined;
   image?: string | undefined;
+  keywords?: string | undefined;
 }
 
-const { title, description, image } = Astro.props;
+const { title, description, image, keywords } = Astro.props;
+
+const isProduction = process.env.NODE_ENV === "production";
+const robots = isProduction ? "index, follow" : "noindex, nofollow";
 ---
 
 <!doctype html>
 <html lang="en" data-theme="night">
   <head>
     <meta charset="UTF-8" />
-    <meta name="description" content={description} />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
+
+    <!-- Robots -->
+    <meta name="robots" content={robots} />
+    <meta name="googlebot" content={robots} />
+
+    <!-- OG tags -->
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={Astro.url.origin} />
     <meta property="og:image" content={image} />
+
+    <!-- Twitter card tags -->
+    <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={image} />
+
+    <meta name="description" content={description} />
+    <meta name="keywords" content={keywords} />
     <title>{title}</title>
   </head>
   <body>
