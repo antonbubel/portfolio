@@ -2,17 +2,24 @@
 import Layout from "../layouts/Layout.astro";
 import Link from "../components/Link.svelte";
 import { FileText, Github, Linkedin } from "lucide-svelte";
+
+const title = "Anton Bubel's Portfolio | Senior Full-Stack Developer | Team/Tech Lead";
+const description = `Experienced Full-Stack Developer and Team/Tech Lead with over 5+ years of experience building web applications.`;
 ---
 
-<Layout title="Anton Bubel - Senior Full Stack Developer">
+<Layout {title} {description}>
   <main class="container py-20">
     <div
       class="flex flex-col md:flex-row justify-center items-center gap-6 pb-6"
     >
       <img
-        src="/profile-picture.webp"
         alt="Anton Bubel"
         class="rounded-full w-32 h-32 animate-fade"
+        src="/images/profile-picture.webp"
+        srcset="
+          /images/profile-picture.320w.webp 320w,
+          /images/profile-picture.480w.webp 480w
+        "
       />
       <div class="prose text-center md:text-left">
         <h1
@@ -22,14 +29,14 @@ import { FileText, Github, Linkedin } from "lucide-svelte";
           <span class="text-primary">Anton</span><span class="pl-2">👋</span>
         </h1>
         <p class="mt-0 font-mono text-lg animate-fade">
-          a passionate full stack developer with over 5+ years of experience
+          a passionate full-stack developer and a team/tech lead with over 5+ years of experience
           building web applications.
         </p>
       </div>
     </div>
     <div class="flex justify-center gap-3">
       <Link
-        href="/anton-bubel-resume.pdf"
+        href="/files/anton-bubel-resume.pdf"
         target="_blank"
         className="btn btn-outline btn-primary btn-sm"
         ariaLabel="Open CV in a new tab"
