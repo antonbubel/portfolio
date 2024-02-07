@@ -5,9 +5,10 @@ import { FileText, Github, Linkedin } from "lucide-svelte";
 
 const title = "Anton Bubel's Portfolio | Senior Full-Stack Developer | Team/Tech Lead";
 const description = `Experienced Full-Stack Developer and Team/Tech Lead with over 5+ years of experience building web applications.`;
+const proflePicture = "/images/profile-picture.webp";
 ---
 
-<Layout {title} {description}>
+<Layout {title} {description} image={proflePicture}>
   <main class="container py-20">
     <div
       class="flex flex-col md:flex-row justify-center items-center gap-6 pb-6"
@@ -15,7 +16,7 @@ const description = `Experienced Full-Stack Developer and Team/Tech Lead with ov
       <img
         alt="Anton Bubel"
         class="rounded-full w-32 h-32 animate-fade"
-        src="/images/profile-picture.webp"
+        src={proflePicture}
         srcset="
           /images/profile-picture.320w.webp 320w,
           /images/profile-picture.480w.webp 480w

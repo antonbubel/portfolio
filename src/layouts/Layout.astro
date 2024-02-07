@@ -4,9 +4,10 @@ import "../global.css";
 interface Props {
   title: string;
   description?: string | undefined;
+  image?: string | undefined;
 }
 
-const { title, description } = Astro.props;
+const { title, description, image } = Astro.props;
 ---
 
 <!doctype html>
@@ -17,6 +18,10 @@ const { title, description } = Astro.props;
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
+    <meta property="og:image" content={image} />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={image} />
     <title>{title}</title>
   </head>
   <body>
