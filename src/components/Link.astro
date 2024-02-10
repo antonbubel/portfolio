@@ -1,0 +1,36 @@
+---
+interface Props {
+  id?: string | undefined;
+  href: string;
+  target?: string | undefined;
+  rel?: string | undefined;
+  className?: string | undefined;
+  ariaLabel?: string | undefined;
+}
+
+import { v4 as uuidv4 } from "uuid";
+
+let id = Astro.props.id || uuidv4();
+const { href, target, rel, className, ariaLabel } = Astro.props;
+---
+
+<a {id} {href} {target} {rel} aria-label={ariaLabel} class={className}>
+  <slot />
+</a>
+
+<script define:vars={{ id, href }}>
+  function handleLinkClicked() {
+    // Send custom event to vercel analytics using the `window.va` object
+    va("event", {
+      name: "link_clicked",
+      data: {
+        url: href,
+      },
+    });
+
+    // Unsubscribe after first invocation
+    document.getElementById(id).removeEventListener("click", handleLinkClicked);
+  }
+
+  document.getElementById(id).addEventListener("click", handleLinkClicked);
+</script>
