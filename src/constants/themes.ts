@@ -1,4 +1,4 @@
-export const darkTheme: string = 'winter';
-export const lightTheme: string = 'night';
+export const darkTheme: string = 'night';
+export const lightTheme: string = 'winter';
 
 export const themes = [darkTheme, lightTheme] as const;

@@ -23,7 +23,7 @@ const dataToggleTheme = themes.join(",");
   const isDarkTheme = theme === darkTheme;
   const themeCheckbox = document.getElementById("theme-checkbox");
 
-  if (!isDarkTheme && themeCheckbox) {
+  if (isDarkTheme && themeCheckbox) {
     themeCheckbox.setAttribute("checked", "true");
   }
 </script>
