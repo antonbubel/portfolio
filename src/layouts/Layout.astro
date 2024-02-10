@@ -9,6 +9,7 @@ interface Props {
 }
 
 const { title, description, image, keywords } = Astro.props;
+import { darkTheme, lightTheme } from "../constants/themes";
 
 const isProduction = process.env.NODE_ENV === "production";
 const robots = isProduction ? "index, follow" : "noindex, nofollow";
@@ -17,6 +18,27 @@ const robots = isProduction ? "index, follow" : "noindex, nofollow";
 <!doctype html>
 <html lang="en" data-theme="night">
   <head>
+    <!-- Theme change -->
+    <script is:inline define:vars={{ darkTheme, lightTheme }}>
+      let theme = localStorage.getItem("theme");
+
+      if (!theme) {
+        const isDarkMode = window.matchMedia(
+          "(prefers-color-scheme: dark)"
+        ).matches;
+
+        theme = isDarkMode ? darkTheme : lightTheme;
+      }
+
+      document.documentElement.setAttribute("data-theme", theme);
+      localStorage.setItem("theme", theme);
+    </script>
+    <script>
+      import { themeChange } from "theme-change";
+      themeChange();
+    </script>
+
+    <!-- Meta tags -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />

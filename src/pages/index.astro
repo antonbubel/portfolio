@@ -1,6 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Link from "../components/Link.svelte";
+import ThemeChanger from "../components/ThemeChanger.astro";
 import { FileText, Github, Linkedin } from "lucide-svelte";
 
 const title = `Anton Bubel's Portfolio | Senior Full-Stack Developer | Team/Tech Lead`;
@@ -11,6 +12,9 @@ const keywords = `Anton Bubel, Portfolio, Full-Stack Developer, Team Lead, Tech 
 
 <Layout {title} {description} image={proflePicture} {keywords}>
   <main class="container py-20">
+    <div class="flex justify-center mb-10">
+      <ThemeChanger client:load />
+    </div>
     <div
       class="flex flex-col md:flex-row justify-center items-center gap-6 pb-6"
     >
