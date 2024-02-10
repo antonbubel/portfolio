@@ -1,6 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Link from "../components/Link.svelte";
+import Link from "../components/Link.astro";
 import ThemeChanger from "../components/ThemeChanger.astro";
 import { FileText, Github, Linkedin } from "lucide-svelte";
 
@@ -13,7 +13,7 @@ const keywords = `Anton Bubel, Portfolio, Full-Stack Developer, Team Lead, Tech 
 <Layout {title} {description} image={proflePicture} {keywords}>
   <main class="container py-20">
     <div class="flex justify-center mb-10">
-      <ThemeChanger client:load />
+      <ThemeChanger />
     </div>
     <div
       class="flex flex-col md:flex-row justify-center items-center gap-6 pb-6"
@@ -50,7 +50,6 @@ const keywords = `Anton Bubel, Portfolio, Full-Stack Developer, Team Lead, Tech 
         target="_blank"
         className="btn btn-outline btn-primary btn-sm"
         ariaLabel="Open CV in a new tab"
-        client:idle
       >
         <FileText />
         CV
@@ -61,7 +60,6 @@ const keywords = `Anton Bubel, Portfolio, Full-Stack Developer, Team Lead, Tech 
         ariaLabel="Open GitHub profile in a new tab"
         rel="noopener noreferrer"
         className="btn btn-sm btn-secondary btn-outline"
-        client:idle
       >
         <Github />
       </Link>
@@ -71,7 +69,6 @@ const keywords = `Anton Bubel, Portfolio, Full-Stack Developer, Team Lead, Tech 
         ariaLabel="Open LinkedIn profile in a new tab"
         rel="noopener noreferrer"
         className="btn btn-sm btn-accent btn-outline"
-        client:idle
       >
         <Linkedin />
       </Link>
