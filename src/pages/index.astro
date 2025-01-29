@@ -2,10 +2,10 @@
 import Layout from "../layouts/Layout.astro";
 import Link from "../components/Link.astro";
 import ThemeChanger from "../components/ThemeChanger.astro";
-import { FileText, Github, Linkedin } from "lucide-svelte";
+import { FileText, Github, Linkedin } from "lucide-astro";
 
 const title = `Anton Bubel's Portfolio | Senior Full-Stack Developer | Team/Tech Lead`;
-const description = `Experienced Full-Stack Developer and Team/Tech Lead with over 5+ years of experience building web applications.`;
+const description = `Experienced Full-Stack Developer and Team/Tech Lead with over 6+ years of experience building web applications.`;
 const proflePicture = "/images/profile.webp";
 const keywords = `Anton Bubel, Portfolio, Full-Stack Developer, Team Lead, Tech Lead, Web Applications`;
 ---
@@ -15,9 +15,7 @@ const keywords = `Anton Bubel, Portfolio, Full-Stack Developer, Team Lead, Tech 
     <div class="flex justify-center">
       <ThemeChanger />
     </div>
-    <div
-      class="flex flex-col md:flex-row justify-center items-center gap-6"
-    >
+    <div class="flex flex-col md:flex-row justify-center items-center gap-6">
       <img
         alt="Anton Bubel"
         class="rounded-full w-32 h-32 animate-fade"
@@ -28,24 +26,20 @@ const keywords = `Anton Bubel, Portfolio, Full-Stack Developer, Team Lead, Tech 
         "
       />
       <div class="prose text-center md:text-left">
-        <h1
-          class="mb-2 inline-block overflow-hidden whitespace-nowrap font-mono animate-typing border-r-4 text-2xl sm:text-3xl"
-        >
+        <h1 class="mb-2 inline-block overflow-hidden whitespace-nowrap font-mono animate-typing border-r-4 text-2xl sm:text-3xl">
           Hi there, I'm
           <span class="text-primary">Anton</span><span class="pl-2">👋</span>
         </h1>
         <p class="mt-0 font-mono text-lg animate-fade">
-          a <span class="text-highlighted">passionate full-stack developer</span
-          > and a
-          <span class="text-highlighted">team/tech lead</span> with <span
-            class="text-highlighted">over 5+ years of experience</span
-          >
+          a <span class="text-highlighted">passionate full-stack developer</span> and a
+          <span class="text-highlighted">team/tech lead</span> with <span class="text-highlighted">over 6+ years of experience</span>
           building web applications.
         </p>
       </div>
     </div>
     <div class="flex justify-center gap-3">
       <Link
+        id="cv-link"
         href="/files/CV-Anton-Bubel.pdf"
         target="_blank"
         className="btn btn-outline btn-primary btn-sm"
@@ -55,6 +49,7 @@ const keywords = `Anton Bubel, Portfolio, Full-Stack Developer, Team Lead, Tech 
         CV
       </Link>
       <Link
+        id="github-link"
         href="https://github.com/antonbubel/"
         target="_blank"
         ariaLabel="Open GitHub profile in a new tab"
@@ -64,6 +59,7 @@ const keywords = `Anton Bubel, Portfolio, Full-Stack Developer, Team Lead, Tech 
         <Github />
       </Link>
       <Link
+        id="linkedin-link"
         href="https://www.linkedin.com/in/antonbubel/"
         target="_blank"
         ariaLabel="Open LinkedIn profile in a new tab"
