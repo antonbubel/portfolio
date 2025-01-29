@@ -1,7 +1,6 @@
 import { defineConfig } from "astro/config";
 import tailwind from "@astrojs/tailwind";
-import svelte from "@astrojs/svelte";
-import vercel from "@astrojs/vercel/serverless";
+import vercel from "@astrojs/vercel";
 import sitemap from "@astrojs/sitemap";
 import robotsTxt from "astro-robots-txt";
 
@@ -19,7 +18,6 @@ export default defineConfig({
   }),
   integrations: [
     tailwind(),
-    svelte(),
     sitemap(),
     robotsTxt({
       sitemap: [`${siteUrl}/sitemap-index.xml`, `${siteUrl}/sitemap-0.xml`],

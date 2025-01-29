@@ -1,17 +1,12 @@
 ---
-import { Sun, Moon } from "lucide-svelte";
+import { Sun, Moon } from "lucide-astro";
 import { themes, darkTheme } from "../constants/themes";
 
 const dataToggleTheme = themes.join(",");
 ---
 
 <label class="swap swap-rotate">
-  <input
-    id="theme-checkbox"
-    type="checkbox"
-    data-toggle-theme={dataToggleTheme}
-    aria-label="Toggle between light and dark mode"
-  />
+  <input id="theme-checkbox" type="checkbox" data-toggle-theme={dataToggleTheme} aria-label="Toggle between light and dark mode" />
 
   <Moon class="swap-off w-10 h-10 fill-current" />
 

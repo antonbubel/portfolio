@@ -23,9 +23,7 @@ const robots = isProduction ? "index, follow" : "noindex, nofollow";
       let theme = localStorage.getItem("theme");
 
       if (!theme) {
-        const isDarkMode = window.matchMedia(
-          "(prefers-color-scheme: dark)"
-        ).matches;
+        const isDarkMode = window.matchMedia("(prefers-color-scheme: dark)").matches;
 
         theme = isDarkMode ? darkTheme : lightTheme;
       }
